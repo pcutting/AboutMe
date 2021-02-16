@@ -9,12 +9,16 @@ android {
 
     defaultConfig {
         applicationId "com.nevie.aboutme"
-        minSdkVersion 23
+        minSdkVersion 27
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {

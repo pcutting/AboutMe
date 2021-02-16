@@ -1,29 +1,30 @@
 package com.nevie.aboutme
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import com.nevie.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
 
+        setContentView(binding.root)
 
-        val bio = findViewById<Button>(R.id.bio_button)
-        val family = findViewById<Button>(R.id.my_family_button)
-        val journey = findViewById<Button>(R.id.programming_button)
-
-        bio.setOnClickListener {
-
+        binding.bioButton.setOnClickListener {
+            val intent = Intent(this, Bio::class.java)
+            startActivity(intent)
         }
 
-        family.setOnClickListener {
-
+        binding.myFamilyButton.setOnClickListener {
+            val intent = Intent(this, MyFamily::class.java)
+            startActivity(intent)
         }
 
-        journey.setOnClickListener{
-
+        binding.programmingButton.setOnClickListener{
+            val intent = Intent(this, Programming::class.java)
+            startActivity(intent)
         }
 
 

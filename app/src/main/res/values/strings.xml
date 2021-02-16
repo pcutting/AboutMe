@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">AboutMe</string>
-    <string name="title_activity_bio">bio</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
+    <string name="title_activity_bio">Bio</string>
+
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_my_family">myFamily</string>
     <string name="title_activity_programming">programming</string>
+
+    <string name="programming">Programming when i was 8 years old until i went to college looked a lot like this. I thought I was pretty good, had some friends that were a little better at it and they helped me get better and I suspect I motivated them as well.  I remember in my first semester in college when the instructor started talking about arrays.  I got so excited and upset that I went so long without them that I could hardly stay seated to finish hearing him talk about them.  I think once in a while we have moments like that and I enjoy them as often as I can get them.  </string>
+
+    <string name="family">I\'m blessed with 3 boys, an incredible wife, great in-laws and a really cute dog.  The dog is my wife\'s,  it just hangs around me. :)</string>
+
+    <string name="Bio">I was born in North Carolina, been all over the world living and working.  Spent a little time in the army and went to play in a big sandbox while there.  I\'ve worked on Ruby on Rails for a while and had fun with that.  Also before that I\'ve worked on developing some smaller applications based off microsoft technologies.</string>
+
+
 </resources>
