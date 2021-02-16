@@ -12,5 +12,6 @@
 
     <string name="Bio">I was born in North Carolina, been all over the world living and working.  Spent a little time in the army and went to play in a big sandbox while there.  I\'ve worked on Ruby on Rails for a while and had fun with that.  Also before that I\'ve worked on developing some smaller applications based off microsoft technologies.</string>
 
+    <string name="activity_xxx_title">About Me Bio</string>
 
 </resources>

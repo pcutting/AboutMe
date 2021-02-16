@@ -12,7 +12,9 @@ class Bio : AppCompatActivity() {
         setContentView(R.layout.activity_bio)
 
         var bar = supportActionBar
+        bar?.title = resources.getString(R.string.activity_xxx_title)
         bar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
