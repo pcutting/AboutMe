@@ -10,7 +10,6 @@
     tools:context=".MyFamily"
     tools:deviceIds="wear">
 
-
     <TextView
         android:id="@+id/programing_text"
         android:layout_width="0dp"
