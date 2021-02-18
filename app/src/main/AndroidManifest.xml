@@ -23,18 +23,11 @@
         <activity
             android:name=".MyFamily"
             android:label="@string/title_activity_my_family">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-            </intent-filter>
         </activity>
         <activity
             android:name=".Bio"
             android:label="@string/title_activity_bio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

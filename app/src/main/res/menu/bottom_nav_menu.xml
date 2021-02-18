@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_bio"
+        android:title="Bio"
+        android:icon="@drawable/ic_about"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/menu_family"
+        android:title="Family"
+        android:enabled="true"
+        android:icon="@drawable/ic_family"
+        />
+
+    <item android:enabled="true"
+        android:id="@+id/menu_programming"
+        android:title="Programming"
+        android:icon="@drawable/ic_programming"
+        />
+
+    <item
+        android:enabled="true"
+        android:id="@+id/menu_hobbies"
+        android:title="Hobbies"
+        android:icon="@drawable/ic_hobbies"
+        />
+
+
+</menu>
