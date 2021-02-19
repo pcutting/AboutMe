@@ -19,4 +19,8 @@
     <string name="item_text_hobby">Hobbies</string>
     <string name="save_button">Save</string>
 
+    <string name="new_fragment_message">Write about your hobby.</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="new_hobby_text">"Hobby Text: "</string>
+
 </resources>
