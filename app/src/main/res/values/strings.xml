@@ -15,5 +15,8 @@
     <string name="activity_xxx_title">About Me Bio</string>
     <string name="my_name">Philip Cutting</string>
     <string name="hobby_text">Some text about hobby.</string>
+    <string name="submit">Add</string>
+    <string name="item_text_hobby">Hobbies</string>
+    <string name="save_button">Save</string>
 
 </resources>

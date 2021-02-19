@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.bottomNavigationBar.setOnNavigationItemReselectedListener {
+        binding.bottomNavigationBar.setOnNavigationItemSelectedListener {
             handleBottomNavigation(it.itemId, binding)
         }
         binding.bottomNavigationBar.selectedItemId = R.id.menu_programming
