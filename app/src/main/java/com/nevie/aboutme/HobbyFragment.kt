@@ -3,19 +3,22 @@ package com.nevie.aboutme
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nevie.aboutme.databinding.FragmentHobbyBinding
 import com.nevie.aboutme.repositories.HobbyRepository
 
-class HobbyFragment: Fragment(R.layout.fragment_hobby){
+class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.HobbyDialogListener {
 
     private var fragmentHobbyBinding: FragmentHobbyBinding? = null
 
-
-
-
+    private fun showDialog() {
+        val dialog = HobbyNewDialogFragment()
+        dialog.show(childFragmentManager , "HobbyDialogFragment")
+        //getFragmentManager()?.let { dialog.show(it, "HobbyDialogFragment") }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,9 +26,10 @@ class HobbyFragment: Fragment(R.layout.fragment_hobby){
         fragmentHobbyBinding = binding
 
         binding.hobbiesFab.setOnClickListener {
-            Log.d("FAB", "i got clicked in onViewCreated")
-            val newFragment = NewHobbyFragment()
-            activity?.supportFragmentManager?.let { it1 -> newFragment.show(it1, "hobbies") }
+            Log.d("FAB", "Fab got clicked in onViewCreated")
+            showDialog()
+//            val newFragment = NewHobbyFragment()
+//            activity?.supportFragmentManager?.let { it1 -> newFragment.show(it1, "hobbies") }
 
 
         }
@@ -34,19 +38,17 @@ class HobbyFragment: Fragment(R.layout.fragment_hobby){
         binding.hobbyList.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
     }
 
+    override fun onDialogPositiveClick(dialog: DialogFragment) {
+        Log.d("HobbyFragment", "Dialog Save clicked")
 
-    // TODO Review this.  was causing bugs.  I think it's totally not needed.
-        //    override fun onCreateView(
-        //        inflater: LayoutInflater,
-        //        container: ViewGroup?,
-        //        savedInstanceState: Bundle?
-        //    ): View? {
-        //
-        //        //val binding = FragmentHobbyBinding.bind(container.rootView)
-        //        super.onCreateView(inflater, container, savedInstanceState)
-        //
-        //
-        //        return container
-        //    }
+    }
+
+    override fun onDialogNegativeClick(dialog: DialogFragment) {
+        Log.d("HobbyFragment", "Dialog, cancel clicked")
+    }
+
+
+
+
 
 }
