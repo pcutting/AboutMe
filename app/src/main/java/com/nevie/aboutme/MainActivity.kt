@@ -1,9 +1,13 @@
 package com.nevie.aboutme
 
+import HobbyFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.FragmentManager
 import com.nevie.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,8 +21,6 @@ class MainActivity : AppCompatActivity() {
             handleBottomNavigation(it.itemId, binding)
         }
         binding.bottomNavigationBar.selectedItemId = R.id.menu_programming
-        //binding.bottomNavigationBar.selectedItemId(R.id.menu_bio)
-
     }
 
     private fun handleBottomNavigation(
@@ -53,3 +55,4 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 }
+

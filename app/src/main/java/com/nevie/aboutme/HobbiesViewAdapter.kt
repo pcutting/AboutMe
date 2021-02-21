@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nevie.aboutme.databinding.HobbyItemBinding
 import com.nevie.aboutme.models.Hobby
+import com.nevie.aboutme.repositories.HobbyRepository
 
-class HobbiesViewAdapter (
-    private val hobbies: MutableList<Hobby>
-    ): RecyclerView.Adapter<HobbiesViewAdapter.HobbiesViewHolder>()
+class HobbiesViewAdapter : RecyclerView.Adapter<HobbiesViewAdapter.HobbiesViewHolder>()
 {
 
     class HobbiesViewHolder(private val binding: HobbyItemBinding) :
@@ -27,9 +26,8 @@ class HobbiesViewAdapter (
     }
 
     override fun onBindViewHolder(holder: HobbiesViewHolder, position: Int) {
-        holder.bind(hobbies[position])
+        holder.bind(HobbyRepository.hobbies[position])
     }
 
-    override fun getItemCount() = hobbies.size
-
+    override fun getItemCount() = HobbyRepository.hobbies.size
 }
