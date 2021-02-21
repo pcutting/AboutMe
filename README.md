@@ -2,5 +2,7 @@
 
 Welcome to my project, AboutMe.  
 
-Here we get to play with fragments and some models.
 
+Known issues: 
+
+New Hobby dialog box buttons are too close.

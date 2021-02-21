@@ -9,14 +9,11 @@ import com.nevie.aboutme.repositories.HobbyRepository
 
 class HobbiesViewAdapter : RecyclerView.Adapter<HobbiesViewAdapter.HobbiesViewHolder>()
 {
-
     class HobbiesViewHolder(private val binding: HobbyItemBinding) :
             RecyclerView.ViewHolder(binding.root){
-
                 fun bind(hobby: Hobby) {
                     binding.hobbyItemTextView.text = hobby.description
                 }
-
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HobbiesViewHolder {

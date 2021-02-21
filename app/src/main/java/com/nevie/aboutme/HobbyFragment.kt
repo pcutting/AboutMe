@@ -1,16 +1,16 @@
+package com.nevie.aboutme
+
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nevie.aboutme.HobbiesViewAdapter
-import com.nevie.aboutme.HobbyNewDialogFragment
-import com.nevie.aboutme.R
 import com.nevie.aboutme.databinding.FragmentHobbyBinding
 
 class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.OnClickListener {
-    private val TAG = "HobbyFragment"
+    private val TAG = "com.nevie.aboutme.HobbyFragment"
     private var fragmentHobbyBinding: FragmentHobbyBinding? = null
 
     private fun showDialog() {
@@ -22,14 +22,14 @@ class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.O
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentHobbyBinding.bind(view)
         fragmentHobbyBinding = binding
-
         binding.hobbiesFab.setOnClickListener {
             Log.d("FAB", "Fab got clicked in onViewCreated")
             showDialog()
         }
-
         binding.hobbyList.adapter = HobbiesViewAdapter()
         binding.hobbyList.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
+        val bar = (activity as AppCompatActivity).supportActionBar
+        bar?.title = "AboutMe Hobbies"
     }
 
     override fun onDialogPositiveClick() {

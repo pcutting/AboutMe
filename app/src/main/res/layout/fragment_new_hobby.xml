@@ -6,8 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/standard_padding"
     android:layout_margin="@dimen/standard_margin"
+    android:paddingLeft="@dimen/half_standard_margin"
+    android:paddingRight="@dimen/half_standard_margin"
     >
-
 
     <TextView
         android:layout_width="match_parent"
@@ -18,21 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/standard_margin"
-
         />
 
-
     <EditText
-            android:id="@+id/hobby_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-
-
+        android:id="@+id/hobby_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autofillHints="Tell us about your hobby"
+        android:inputType="textUri|textShortMessage|textLongMessage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

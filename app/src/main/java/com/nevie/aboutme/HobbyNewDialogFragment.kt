@@ -39,11 +39,13 @@ class HobbyNewDialogFragment : DialogFragment(){
 
             builder.setView(view.root)
                 .setPositiveButton(R.string.save_button
-                ) { dialogInterface: DialogInterface, i: Int ->
+                ) { _: DialogInterface, _: Int ->
                     val hobbyText = view.hobbyEditText.text.toString()
                     val hobby = Hobby(hobbyText)
                     Log.d("HobbyNewDialogFragment", "Save clicked, $hobby")
-                    HobbyRepository.hobbies.add(hobby)
+                    if (hobbyText != null && hobbyText != "") {
+                        HobbyRepository.hobbies.add(hobby)
+                    }
                     this.onClickListener.onDialogPositiveClick()
                 }
                 .setNegativeButton(R.string.cancel_button

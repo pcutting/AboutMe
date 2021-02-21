@@ -1,31 +1,25 @@
 package com.nevie.aboutme
 
-import HobbyFragment
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
-import androidx.fragment.app.FragmentManager
 import com.nevie.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-
         binding.bottomNavigationBar.setOnNavigationItemSelectedListener {
-            handleBottomNavigation(it.itemId, binding)
+            handleBottomNavigation(
+                it.itemId
+            )
         }
         binding.bottomNavigationBar.selectedItemId = R.id.menu_programming
     }
 
     private fun handleBottomNavigation(
-        menuItemId: Int,
-        binding : ActivityMainBinding
+        menuItemId: Int
     ): Boolean = when(menuItemId) {
         R.id.menu_bio -> {
             swapFragments(BioFragment())
@@ -44,12 +38,9 @@ class MainActivity : AppCompatActivity() {
             true
         }
         else -> false
-
     }
 
-
     private fun swapFragments(fragment: Fragment) {
-
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()

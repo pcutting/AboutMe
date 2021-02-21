@@ -22,5 +22,8 @@
     <string name="new_fragment_message">Write about your hobby.</string>
     <string name="cancel_button">Cancel</string>
     <string name="new_hobby_text">"Hobby Text: "</string>
+    <string name="monkey_tapping_on_notebook_pc">Monkey tapping on notebook pc</string>
+    <string name="two_of_the_3_boys_with_father">Two of the 3 boys with father.</string>
+    <string name="picture_of_phil">Picture of Phil</string>
 
 </resources>
