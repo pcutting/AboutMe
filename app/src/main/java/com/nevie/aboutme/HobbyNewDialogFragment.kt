@@ -15,8 +15,8 @@ class HobbyNewDialogFragment : DialogFragment(){
     private lateinit var onClickListener: OnClickListener
 
     interface OnClickListener {
-        fun onDialogPositiveClick()
-        fun onDialogNegativeClick()
+        fun onDialogPositiveClick(hobby: Hobby?)
+        fun onDialogNegativeClick(hobby: Hobby?)
     }
 
     companion object {
@@ -35,22 +35,26 @@ class HobbyNewDialogFragment : DialogFragment(){
             val builder = AlertDialog.Builder(it)
             //val inflater = requireActivity().layoutInflater
             val layoutInflater = LayoutInflater.from(requireContext())
-            val view = FragmentNewHobbyBinding.inflate(layoutInflater)
+            val binding = FragmentNewHobbyBinding.inflate(layoutInflater)
 
-            builder.setView(view.root)
+            builder.setView(binding.root)
                 .setPositiveButton(R.string.save_button
                 ) { _: DialogInterface, _: Int ->
-                    val hobbyText = view.hobbyEditText.text.toString()
+                    val hobbyText = binding.hobbyEditText.text.toString()
                     val hobby = Hobby(hobbyText)
                     Log.d("HobbyNewDialogFragment", "Save clicked, $hobby")
-                    if (hobbyText != null && hobbyText != "") {
+                    if (hobbyText != "") {
                         HobbyRepository.hobbies.add(hobby)
                     }
-                    this.onClickListener.onDialogPositiveClick()
+                    this.onClickListener.onDialogPositiveClick(hobby)
                 }
                 .setNegativeButton(R.string.cancel_button
                 ) { dialog, id ->
                     dismiss()
+                    val hobbyText = binding.hobbyEditText.text.toString()
+                    val hobby = Hobby(hobbyText)
+                    this.onClickListener.onDialogNegativeClick(hobby)
+                    //No reason to do this.  it's here for demonstration and discussion on medium.com
                     Log.d("HobbyNewDialogFragment", "Cancel clicked, $dialog, $id")
                 }
             builder.create()

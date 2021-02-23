@@ -8,8 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="background">#FFF</color>
-    <color name="grey">#0DF4DF</color>
-    <color name="dark_grey">#016C62</color>
-    <color name="grey_transarency">#c60DF4DF</color>
+    <color name="background">#f4f4f4</color>
+    <color name="light_grey">#f4f4f4</color>
+    <color name="grey">#DEDAD1</color>
+    <color name="dark_grey">#c4c4bc</color>
+    <color name="text_color_for_grey">#464646</color>
+    <color name="grey_transarency">#c6c4c4bc</color>
 </resources>

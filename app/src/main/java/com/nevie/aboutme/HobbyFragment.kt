@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nevie.aboutme.databinding.FragmentHobbyBinding
+import com.nevie.aboutme.models.Hobby
 
 class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.OnClickListener {
-    private val TAG = "com.nevie.aboutme.HobbyFragment"
+    private val TAG = "HobbyFragment"
     private var fragmentHobbyBinding: FragmentHobbyBinding? = null
 
     private fun showDialog() {
@@ -32,12 +33,14 @@ class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.O
         bar?.title = "AboutMe Hobbies"
     }
 
-    override fun onDialogPositiveClick() {
+    override fun onDialogPositiveClick(hobby: Hobby?) {
         Log.d(TAG, " onDialogPositiveClick save clicked" )
+        //Nothing to do, is handled by caller
     }
 
-    override fun onDialogNegativeClick() {
+    override fun onDialogNegativeClick(hobby : Hobby?) {
         Log.d(TAG, " onDialogNegativeClick cancel clicked")
+        //Nothing to do in this point.  Here for discussion on medium.com
     }
 
 
