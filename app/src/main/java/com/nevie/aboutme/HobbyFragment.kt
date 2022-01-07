@@ -1,4 +1,4 @@
-package com.nevie.aboutme
+ package com.nevie.aboutme
 
 import android.os.Bundle
 import android.util.Log
@@ -10,25 +10,33 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nevie.aboutme.databinding.FragmentHobbyBinding
 import com.nevie.aboutme.models.Hobby
 
-class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.OnClickListener {
+ class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.OnClickListener {
     private val TAG = "HobbyFragment"
     private var fragmentHobbyBinding: FragmentHobbyBinding? = null
 
     private fun showDialog() {
         val dialog = HobbyNewDialogFragment.create(this)
         dialog.show(parentFragmentManager , "HobbyDialogFragment")
+
     }
+
+    private lateinit var adapter: HobbiesViewAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentHobbyBinding.bind(view)
         fragmentHobbyBinding = binding
+
+        adapter = HobbiesViewAdapter()
+        binding.hobbyList.adapter = adapter
+        binding.hobbyList.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
+
         binding.hobbiesFab.setOnClickListener {
             Log.d("FAB", "Fab got clicked in onViewCreated")
             showDialog()
+
         }
-        binding.hobbyList.adapter = HobbiesViewAdapter()
-        binding.hobbyList.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
+
         val bar = (activity as AppCompatActivity).supportActionBar
         bar?.title = "AboutMe Hobbies"
     }
@@ -36,6 +44,7 @@ class HobbyFragment: Fragment(R.layout.fragment_hobby), HobbyNewDialogFragment.O
     override fun onDialogPositiveClick(hobby: Hobby?) {
         Log.d(TAG, " onDialogPositiveClick save clicked" )
         //Nothing to do, is handled by caller
+        adapter.notifyDataSetChanged()
     }
 
     override fun onDialogNegativeClick(hobby : Hobby?) {

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
                 it.itemId
             )
         }
-        binding.bottomNavigationBar.selectedItemId = R.id.menu_programming
+        binding.bottomNavigationBar.selectedItemId = R.id.menu_bio
     }
 
     private fun handleBottomNavigation(
